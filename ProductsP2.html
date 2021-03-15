@@ -1,0 +1,169 @@
+<!-- creation date 7-15/12/2020 by Grainne Walsh x20153678 & Arthur Ryan x20170386 for Project end of term NCI-HDAIML-->
+<!-- intention of this code is to facilitate the searching and finding the clothes the customer wants -->
+
+
+<!DOCTYPE html> <!-- HTML5 doctype -->
+<html lang="en" class="html"> <!-- HTML5 opening HTML tag with language. The HTML tag can also be used on it's own now. -->
+	<head>
+	
+		<meta charset="UTF-8"> <!-- HTML5 charset -->
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<!-- search terms for SEO -->
+		<meta name="keywords" content="Men, Mens, Fashion,shirt,tie,trousers,jacket,leather,sock,shoes,boots,discount,same day,search”>
+		<meta name="description" content="Mens Top Fashion at good prices with strong search ability, wide range”>
+		<meta name="author" content="Grainne Walsh & Arthur Ryan"> <!-- who created this page 7-14/12/2020 -->
+		
+		<title>Edge Mens Fashion &trade;</title>
+		
+		<script type="text/javascript" src="ProjectJavascript.js"></script>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+				
+		<link rel="stylesheet" href="ProjectStylesheet.css">
+		
+		<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->	
+
+	</head>
+
+	
+<body>
+
+<h1 id="storenameproducts">Edge Fashion &trade;</h1>
+
+<!-- Start of navigation (horizontal) -->
+<ul id="navproducts">
+  <li><a href="Index.html">Home</a></li>
+  <li><a href="ProductsP2.html">Products</a></li>
+  <li><a href="CartP3.html">Cart</a></li>
+  <li><a href="CompanyInfoP4.html">About Edge Fashion</a></li>
+</ul><br /><br /><br />
+<!-- End of navigation (horizontal) -->
+
+<!-- Slideshow container -->	
+<h1 id="productheader">View our product range using this easy to use Carosel (just click on a grey button)</h1>
+	
+<!-- Slideshow container -->	
+<div class="slideshow-container"> 
+
+  <!-- Full-width images with number and caption text -->
+  <div class="testslidefade">
+    <div class="numbertext">1 / 14</div>
+    <img src="shirts-591750_1920.jpg" style="width:100%">
+    <div class="text">Shirt Goodfellow</div>
+  </div>
+
+  <div class="testslidefade">
+    <div class="numbertext">2 / 14</div>
+    <img src="shirt-3737405_1920.jpg" style="width:100%" alt="shirt">
+    <div class="text">Shirt Embriodered</div>
+  </div>
+
+  <div class="testslidefade">
+    <div class="numbertext">3 / 14</div>
+    <img src="shirt-2345417_1920.jpg" style="width:100%">
+    <div class="text">Shirt Darwin</div>
+  </div>
+
+  <div class="testslidefade">
+    <div class="numbertext">4 / 14</div>
+    <img src="neckties-210347_1920.jpg" style="width:100%">
+    <div class="text">Silk Tie</div>
+  </div>
+  
+    <div class="testslidefade">
+    <div class="numbertext">5 / 14</div>
+    <img src="neckties-210346_1920.jpg" style="width:100%">
+    <div class="text">Cotton Tie</div>
+	</div>
+	
+	<div class="testslidefade">
+    <div class="numbertext">6 / 14</div>
+    <img src="trousers-1853436_1920.jpg" style="width:100%">
+    <div class="text">Colourful Trousers</div>
+  </div>
+
+  <div class="testslidefade">
+    <div class="numbertext">7 / 14</div>
+    <img src="male-3740358_1920.jpg" style="width:100%">
+    <div class="text">Denim Trousers</div>
+  </div>
+
+  <div class="testslidefade">
+    <div class="numbertext">8 / 14</div>
+    <img src="man-1150058_1920.jpg" style="width:100%">
+    <div class="text">Fine Leather Jacket</div>
+  </div>
+
+  <div class="testslidefade">
+    <div class="numbertext">9 / 14</div>
+    <img src="leather-shoes-2530462_1920.jpg" style="width:100%">
+    <div class="text">Shoe Clean Finish</div>
+  </div>
+  
+    <div class="testslidefade">
+    <div class="numbertext">10 / 14</div>
+    <img src="hiking-shoes-3074971_1920.png" style="width:100%">
+    <div class="text">Outdoor Hiking Boots</div>
+	</div>
+	
+	<div class="testslidefade">
+    <div class="numbertext">11 / 14</div>
+    <img src="clothing-4878984_1920.jpg" style="width:100%">
+    <div class="text">Fine Organic Cotton Socks</div>
+	</div>
+	
+	 <div class="testslidefade">
+    <div class="numbertext">12 / 14</div>
+    <img src="fashion-601561_1920.jpg" style="width:100%">
+    <div class="text">Shoe Mediterranean Weave</div>
+	</div>
+	
+	<div class="testslidefade">
+    <div class="numbertext">13 / 14</div>
+    <img src="brown-shoes-1150071_1920.jpg" style="width:100%">
+    <div class="text">Fine Brown Leather Boots</div>
+	</div>
+	
+	<div class="testslidefade">
+    <div class="numbertext">14 / 14</div>
+    <img src="belt-952834_1920.jpg" style="width:100%">
+    <div class="text">Shoes in Brogue Style</div>
+	</div>
+
+
+  <!-- Next and previous buttons -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
+<!-- The dots/circles for Carousel -->
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+  <span class="dot" onclick="currentSlide(4)"></span>
+  <span class="dot" onclick="currentSlide(5)"></span>
+  <span class="dot" onclick="currentSlide(6)"></span>
+  <span class="dot" onclick="currentSlide(7)"></span>
+  <span class="dot" onclick="currentSlide(8)"></span>
+  <span class="dot" onclick="currentSlide(9)"></span>
+  <span class="dot" onclick="currentSlide(10)"></span>
+  <span class="dot" onclick="currentSlide(11)"></span>
+  <span class="dot" onclick="currentSlide(12)"></span>
+  <span class="dot" onclick="currentSlide(13)"></span>
+  <span class="dot" onclick="currentSlide(14)"></span>
+</div>
+
+<!-- footer section -->
+<div id="productsfooter"><footer>Copyright &copy; Edge Fashion &trade;</footer></div>
+
+</body>
+	
+	
+	
+	

@@ -1,0 +1,251 @@
+<!-- creation date 7-15/12/2020 by Grainne Walsh x20153678 & Arthur Ryan x20170386 for Project end of term NCI-HDAIML-->
+<!-- intention of this code is to facilitate the searching and finding the clothes the customer wants -->
+
+
+<!DOCTYPE html> <!-- HTML5 doctype -->
+<html lang="en" class="html"> <!-- HTML5 opening HTML tag with language. The HTML tag can also be used on it's own now. -->
+	<head>
+		<meta charset="UTF-8"> <!-- HTML5 charset -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!-- search terms for SEO -->
+		<meta name="keywords" content="Men, Mens, Fashion,shirt,tie,trousers,jacket,leather,sock,shoes,boots,discount,same day,search”>
+		<meta name="description" content="Mens Top Fashion at good prices with strong search ability, wide range”>	
+		<meta name="author" content="Grainne Walsh & Arthur Ryan"> <!--who created this page 7-14/12/2020--> 
+		
+		<title>Edge Mens Fashion &trade;</title>
+		<script type="text/javascript" src="ProjectJavascript.js"></script>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		
+		<link rel="stylesheet" href="ProjectStylesheet.css">
+		
+		<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->	
+
+	</head>
+		
+	<body>
+
+	<h1 id="storenamecart">Edge Fashion &trade;</h1>
+
+	<!-- Start of navigation (horizontal) -->
+	<ul id="cartnavproducts">
+		<li><a href="Index.html">Home</a></li>
+		<li><a href="ProductsP2.html">Products</a></li>
+		<li><a href="CartP3.html">Cart</a></li>
+		<li><a href="CompanyInfoP4.html">About Edge Fashion</a></li>
+	</ul><br/><br/><br/>
+	<!-- End of navigation (horizontal) -->
+	
+	<!-- start of form for cart ordering -->
+	<form name="cartform" action="edgesubmission.html">
+				
+		<!-- start of table for cart ordering -->
+		<table class="cartformtable">
+				
+		<!-- Customer entry block and call of namelength to validate length of customer name-->
+		<tr>
+		<td>Customer name:</td>
+		<td><input id="customername" name="customername" type="text" 
+			 onchange="namelength(document.cartform.customername)" size="15"  maxlength="15" placeholder="* Your Name" required="required" />
+		</td>
+		
+		<!-- email entry block -->
+		</tr>
+		<tr>
+		<td>Customer Email Address:</td>
+		<td><input type="email" name="email" placeholder="* Enter a valid email address" required="required" />
+		</td>
+		
+		<!-- discount code block 'newjoiner' is the code to qualify for a 15% discount-->
+		</tr>
+		<tr>
+		<td>Secret discount word:</td>
+		<td> <input type="text" id="discountcode" name="discountcode" placeholder="Hint 'new'"/>
+		</td>
+		</tr> 
+		
+			
+		<!-- shirt selection -->
+		<tr>
+		<td>Shirt Selection:</td>
+		<td>	
+		<select name="shirtselection" id="shirtselection">
+			<option value="" disabled selected>Choose a shirt option</option>
+			<option value="Denim">Denim  &euro;20</option>
+			<option value="Goodfellow">Goodfellow  &euro;25</option>
+			<option value="Embroidered">Embroidered  &euro;30</option>
+		</select>
+        </td>
+		</tr>
+		
+		<!-- section block for number of shirts -->
+		<tr>
+		<td>How many shirts?: </td>
+		<td><input title="Enter Number of Shirts" id="shirtnumber" name="shirtnumber" type="text" size="2" placeholder="Qty"
+		    maxlength="2"  onchange="allnumericshirt(document.cartform.shirtnumber)"/>
+		</td> 
+		</tr> 
+		
+		
+		<!-- tie selection -->
+        <tr>
+		<td>Tie Selection:</td>
+		<td>	
+		<select name="tieselection" id="tieselection">
+			<option value="" disabled selected>Choose a tie option</option>
+			<option value="Cotton Tie">Cotton Tie  &euro;10</option>
+			<option value="Silk Tie">Silk Tie  &euro;15</option>
+		</select>
+        </td>
+		</tr>
+		
+		<!-- section block for number of ties -->
+		<tr>
+		<td>How many Ties?: </td>
+		<td><input title="Enter Number of Ties" id="tienumber" name="tienumber" type="text" size="2" placeholder="Qty"
+		    maxlength="2"  onchange="allnumerictie(document.cartform.tienumber)"/>
+		</td> 
+		</tr> 		
+	
+          
+		<!-- trousers selection -->
+		<tr>
+		<td>Trouser Selection:</td>
+		<td>	
+		<select name="trouserselection" id="trouserselection">
+			<option value="" disabled selected>Choose a pair of trousers</option>
+			<option value="denimtrouser">Denim  &euro;20</option>
+			<option value="colorfultrouser">Colorful  &euro;30</option>
+		</select>
+        </td>
+		</tr>
+		
+		<!-- section block for number of trousers -->
+		<tr>
+		<td>How many trousers?: </td>
+		<td><input title="Enter Number of Trousers" id="trousernumber" name="trousernumber" type="text" size="2" placeholder="Qty"
+		    maxlength="2"  onchange="allnumerictrouser(document.cartform.trousernumber)"/>
+		</td> 
+		</tr> 		       
+		  
+		  
+		<!-- jacket selection -->
+		<tr>
+		<td>Jacket Selection:</td>
+		<td>	
+		<select name="jacketselection" id="jacketselection">
+			<option value="" disabled selected>Choose a jacket</option>
+			<option value="LeatherJacket">Fine Leather  &euro;50</option>
+		</select>
+        </td>
+		</tr>
+
+		<!-- section block for number of jackets -->
+		<tr>
+		<td>How many jackets?: </td>
+		<td><input title="Enter Number of Jackets" id="jacketnumber" name="jacketnumber" type="text" size="2" placeholder="Qty"
+		    maxlength="2"  onchange="allnumericjackets(document.cartform.jacketnumber)"/>
+		</td> 
+		</tr> 
+				  
+		<!-- section block for size of shirts, trousers, jacket,  -->
+		<tr>
+		<td>For shirt/trouser/jacket: </td>
+		</tr>
+		<tr>
+		<td>What size?: </td>
+		<td><input title="Enter Size for shirt/trouser/jacket" id="sizeletters" name="sizeletters" type="text" size="2" placeholder="Size"
+		    maxlength="6"  onchange="allletterssize(document.cartform.sizeletters)"/>
+		</td> 
+		</tr> 
+				  
+		<!-- shoe selection -->
+		<tr>
+		<td>Shoe Selection:</td>
+		<td>	
+		<select name="shoeselection" id="shoeselection">
+			<option value="" disabled selected>Choose a shoe</option>
+			<option value="CleanFinish">Clean Finish  &euro;70</option>
+			<option value="HikingBoot">Hiking Boots  &euro;80</option>
+			<option value="Weave"> Mediterranean Weave &euro;90</option>
+			<option value="LeatherBoots"> Fine Leather Boots  &euro;100</option>
+			<option value="Brogue"> Brogue Style  &euro;120</option>	
+		</select>
+        </td>
+		</tr>
+
+		<!-- section block for size of shoes -->
+		<tr>
+		<td>What size of shoes?: </td>
+		<td><input title="Enter Size of Shoes" id="shoesize" name="shoesize" type="text" size="2" placeholder="Size"
+		    maxlength="2"  onchange="allnumericshoes(document.cartform.shoesize)"/>
+		</td> 
+		</tr> 		
+		
+		  
+		<!-- sock selection -->
+		<tr>
+		<td>Sock Selection:</td>
+		<td>	
+		<select name="sockselection" id="sockselection" required="required">
+			<option value="" disabled selected>* Choose a sock</option>
+			<option value="FineOrganicCotton">Fine Organic Cotton  &euro;25</option>	
+		</select>
+        </td>
+		</tr>
+		
+		
+		<!-- section block for number of socks -->
+		<tr>
+		<td>How many socks?: </td>
+		<td><input title="Enter Number of socks" id="socknumber" name="sockumber" type="text" size="2" placeholder="* Qty"
+		    maxlength="2" required=="required" onchange="allnumericsocks(document.cartform.customername, document.cartform.shirtnumber, document.cartform.tienumber,
+			document.cartform.trousernumber, document.cartform.jacketnumber, document.cartform.sizeletters,  
+			document.cartform.shoesize, document.cartform.shoenumber, document.cartform.socknumber, 
+			document.cartform.shirtselection,
+			document.cartform.tieselection, document.cartform.trouserselection, document.cartform.jacketselection,
+			document.cartform.sockselection,document.cartform.shoeselection)"/>
+		</td> 
+		</tr>
+		
+		<!-- Credit card details masked for secuirty-->
+		<tr>
+		<td>Credit card number:</td>
+		<td><input title="creditcard" id="creditcard" name="creditcard" type="password" 
+			 onchange="allnumericcard(document.cartform.creditdcard)" size="16"  maxlength="16" placeholder="* Card number" required="required" />
+		</td>
+		</tr>
+
+		<!-- Euro Totaling of order output box & code block-->					
+		<label id="orderlabel"><b><i>Order Total Amount </i></b>&euro;</label>
+		<input name="tot_amount" id="tot_amount" type="text" readonly="readonly" />
+		
+		<!-- Summary of order output code block -->
+		<label id="summarylabel"><b><i>Summary of Order</i><b></label>
+		<textarea name="summary" id="summary" type="text" readonly="readonly" cols="20" wrap="hard" > </textarea>
+	
+		<!-- call to calculateTotal function and submit form/order of clothing -->	
+		<input type="submit" id="submit" value="Press to order great clothes!" 
+		onclick="calculateTotal(document.cartform.customername, document.cartform.shirtnumber, document.cartform.tienumber,
+			document.cartform.trousernumber, document.cartform.jacketnumber, document.cartform.sizeletters,  
+			document.cartform.shoesize, document.cartform.shoenumber, document.cartform.socknumber, 
+			document.cartform.shirtselection,
+			document.cartform.tieselection, document.cartform.trouserselection, document.cartform.jacketselection,
+			document.cartform.sockselection,document.cartform.shoeselection)">
+		
+	</table>
+			
+	</form>
+	
+	</body>
+	
+	<!-- footer section -->
+	<div id="cartfooter"><footer>Copyright &copy; Edge Fashion&trade;</footer></div>
+	
+	</div>
+</div>
+	
+</html>

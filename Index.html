@@ -1,0 +1,103 @@
+<!-- creation date 7-15/12/2020 by Grainne Walsh x20153678 & Arthur Ryan x20170386 for Project end of term NCI-HDAIML-->
+<!-- intention of this code is to facilitate the searching and finding the clothes the customer wants -->
+
+<!DOCTYPE html> <!-- HTML5 doctype -->
+<html lang="en" class="html"> <!-- HTML5 opening HTML tag with language. The HTML tag can also be used on it's own now. -->
+	<head>
+		<meta charset="UTF-8"> <!-- HTML5 charset -->
+		
+		<!-- viewport for RWD -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!-- search terms for SEO -->
+		<meta name="keywords" content="Men, Mens, Fashion,shirt,tie,trousers,jacket,leather,sock,shoes,boots,discount,same day,search”>
+		<meta name="description" content="Mens Top Fashion at good prices with strong search ability, wide range”>
+		
+		<meta name="author" content="Arthur Ryan Grainne Walsh"> <!-- who created this page 7-15/12/2020-->
+		
+		
+		<title>Edge Mens Fashion &trade;</title>
+		<script type="text/javascript" src="ProjectJavascript.js"></script>
+
+		<link rel="stylesheet" href="ProjectStylesheet.css">
+		
+		<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->	
+
+	</head>
+		
+	<header>
+	
+	<h1 id="storename">Edge Fashion&trade;</h1>
+
+	<h2 id="brandproposition">Edge Fashion&trade; stands for the best brands with top quality delivered same day (or whenever and where ever you want)</h1>
+	
+	</header>
+	
+	<body>
+	
+	<!-- * Start of Search HTML * -->	
+	<!-- Start of navigation (horizontal) -->
+
+	<ol id="searchadvanced">
+		<li><a href="ProductsP2.html">Jacket</a></li>
+		<li><a href="ProductsP2.html">Shirt</a></li>
+		<li><a href="ProductsP2.html">Trousers</a></li>
+		<li><a href="ProductsP2.html">Briefs</a></li>
+		<li><a href="ProductsP2.html">Socks</a></li>
+		<li><a href="ProductsP2.html">Shoes</a></li>
+		<li><a href="ProductsP2.html">Accessories</a></li>
+	</ol>
+	
+
+<!-- End of navigation (horizontal) -->
+
+<br/><br/><br/><br/>
+
+<!-- * Start of Search HTML * -->	
+<div class="col-1 menu"><input type="text" id="userinput" onkeyup="SearchFunction()" placeholder="What would you like to buy today..." title="searchproducts"></div>
+
+<div class="col-1 menu">
+	<ul id="nav">
+		<li><a href="Index.html">Home</a></li>
+		<li><a href="ProductsP2.html">Products</a></li>
+		<li><a href="CartP3.html">Cart</a></li>
+		<li><a href="CompanyInfoP4.html">About Edge Fashion</a></li>
+	</ul>
+</div>
+
+</div>
+<!-- * End of Search HTML * -->	
+
+<p><div id="homeimage"><img src="iStock-487808742.jpg" height="350px" width="1300px" alt="Edge Fashion Icon"></div></p>
+<!-- use % relative width and height instead of px specific ie for RWD -->
+
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+	
+	<!-- footer section -->
+	<div id="footer"><footer>Copyright &copy; Edge Fashion&trade;</footer></div>
+	
+	</body>
+	
+	<!-- script for intelligent search function -->
+	<script>
+	function SearchFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("userinput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("searchadvanced");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+	}
+	</script>
+	
+</html>

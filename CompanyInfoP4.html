@@ -1,0 +1,99 @@
+<!-- creation date 7-15/12/2020 by Grainne Walsh x20153678 & Arthur Ryan x20170386 for Project end of term NCI-HDAIML-->
+<!-- intention of this code is to facilitate the searching and finding the clothes the customer wants -->
+
+
+<!DOCTYPE html> <!-- HTML5 doctype -->
+<html lang="en" class="html"> <!-- HTML5 opening HTML tag with language. The HTML tag can also be used on it's own now. -->
+	<head>
+		<!-- meta tags that are needed-->
+		<meta charset="UTF-8"> <!-- HTML5 charset -->
+		<meta name="viewport" content="width=device-width, initial-scale=1"> <!--Bootstrap recommended-->
+		
+		<!-- search terms for SEO -->
+		<meta name="keywords" content="Men, Mens, Fashion,shirt,tie,trousers,jacket,leather,sock,shoes,boots,discount,same day,search”>
+		<meta name="description" content="Mens Top Fashion at good prices with strong search ability, wide range”>
+		<meta name="author" content="Grainne Walsh"> <!--who created this page 7-14/12/2020-->
+
+		<title>Edge Mens Fashion &trade;</title>
+
+		<!--Our Style CSS Sheet -->
+		<link rel="stylesheet" href="ProjectStylesheet.css">
+
+		<!-- Our JavaScript Sheet -->
+		<script type="text/javascript" src="ProjectJavascript.js"></script>
+
+
+	</head>
+
+
+	<body>
+
+
+<div>
+	<ul id="navaboutus">
+		<li><a href="Index.html">Home</a></li>
+		<li><a href="ProductsP2.html">Products</a></li>
+		<li><a href="CartP3.html">Cart</a></li>
+		<li><a href="CompanyInfoP4.html">About Edge Fashion</a></li>
+	</ul>
+</div>
+
+
+<div><h2 class="HeadingContact"><span style="background-color:black"><u>About Edge Fashion</u></span></h2>
+
+	<button class="accordion"><u>Contact Us</u></button>
+	<div class="panel">
+  	<p>Edge Fashion is based in Dublin City Centre, if you need to contact us. Please do so by one of the below methods.
+			<br/><b>Phone:</b> 1800 123 456
+			<br/><b>email:</b> info@edgefashion.ie
+			<br/><b>Address:</b> Edge Fashion,
+			<br/> Grand Canal Dock,
+			<br/> Dublin 2
+		</p>
+	</div>
+
+	<button class="accordion"><u>Returns Policy</u></button>
+	<div class="panel">
+  	<p>All online orders can be returned free and easily. We accept all items returned to us within 30 days from the delivery date.
+			<br/> This can be done simply by filling in the returns slip that comes in every delivery.
+			<br/>Selcting the item(s) you wish to return & why.
+			<br/> Then simply return the package to your nearest AnPost and this will be shipped back to us free of charge.
+		</p>
+	</div>
+
+	<button class="accordion"><u>Terms & Conditions</u></button>
+	<div class="panel">
+  	<p>Welcome to Edge Fashion Website, we hope you have an enjoyable experience. Edge Fashion is a registered company in the Republic of Ireland.
+		(company number: 03456987 and VAT number : IRE 345 876 908) and trading as www.edgefashion.ie.
+			<br/> We try to be as specific as possible about the male clothing products we provide in terms of detail, size, availability & colour options. Please note
+			that since the colours you see are protryed on your specific monitor/phone screen the colour, we cannot guarantee that your screen will display it accurately. This does not affect your Statutory rights.
+		 	If the product you checkout becomes unavailable during the process we will inform you as soon as possible.</p>
+		</div>
+	</div>
+	
+
+<!-- script for accordion placed at bottom for faster website loading -->
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+</script>
+
+</body>
+<footer>
+	<div>
+		<p class="footer">Copyright &copy; Edge Fashion&trade;</p>
+	</div>
+</footer>
+</html>

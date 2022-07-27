@@ -5,4 +5,5 @@
 # 1 - Java
 # 2 - HTML + CSS
 # 3 - Python
-# 4 - SQL
+# 4 - R
+# 5 - SQL

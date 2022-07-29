@@ -1,33 +1,25 @@
-CREATE TABLE SQL_SUBQUERY_CASE_JOIN_HAVING_28_7_2022 (
-    `Column_1` VARCHAR(100) CHARACTER SET utf8,
-    `Column_2` VARCHAR(6) CHARACTER SET utf8,
-    `Column_3` VARCHAR(42) CHARACTER SET utf8,
-    `Column_4` INT
-);
-INSERT INTO SQL_SUBQUERY_CASE_JOIN_HAVING_28_7_2022 VALUES
-    ('SELECT',NULL,NULL,NULL),
-    ('  Orders.warehouse_id',NULL,NULL,NULL),
-    ('  CONCAT(Orders.state',' '' : ''',' Orders.warehouse_alias) AS warehouse_name',NULL),
-    ('  COUNT(Orders.order_id) AS number_of_orders',NULL,NULL,NULL),
-    ('  (SELECT',NULL,NULL,NULL),
-    ('    COUNT(*)',NULL,NULL,NULL),
-    ('    FROM `st-project-18-7-2022.SQL_demos.warehouse_orders` AS Orders)',NULL,NULL,NULL),
-    ('  FROM Orders',NULL,NULL,NULL),
-    ('  AS total_orders',NULL,NULL,NULL),
-    ('  CASE',NULL,NULL,NULL),
-    ('    WHEN COUNT(orders.order_id) / (SELECT COUNT(*) FROM warehouse_orders.order_id AS Orders) <= 0.20',NULL,NULL,NULL),
-    ('    THEN "fulfilled 0-20% of Orders"',NULL,NULL,NULL),
-    ('    WHEN COUNT(orders.order_id) / (SELECT COUNT(*) FROM warehouse_orders.order_id AS Orders) > 0.20',NULL,NULL,NULL),
-    ('    AND COUNT(orders.order_id) / (SELECT COUNT(*) FROM warehouse_orders.order_id AS Orders) <= 0.60',NULL,NULL,NULL),
-    ('    THEN "fulfilled 21-60% of Orders"',NULL,NULL,NULL),
-    ('  ELSE "Fulfilled more than 60% of Orders"',NULL,NULL,NULL),
-    ('  END AS fulfillment_summary',NULL,NULL,NULL),
-    ('FROM `SQL_demos.warehouse_orders` AS Warehouse',NULL,NULL,NULL),
-    ('LEFT JOIN `SQL_demos.orders` AS Orders',NULL,NULL,NULL),
-    ('  ON orders.warehouse_id = warehouse_orders.warehouse_id',NULL,NULL,NULL),
-    ('GROUP BY',NULL,NULL,NULL),
-    ('  warehouse_orders.warehouse_id',NULL,NULL,NULL),
-    ('  warehouse_orders.warehouse_name',NULL,NULL,NULL),
-    ('HAVING',NULL,NULL,NULL),
-    ('  COUNT(orders.order_id) > 0',NULL,NULL,NULL),
-    (NULL,NULL,NULL,NULL);
+
+SELECT
+    Orders.warehouse_id
+    CONCAT(orders.state, ' : ' , orders.warehouse_alias) AS warehouse_name
+    COUNT(orders.order_id) AS number_of_orders
+        (SELECT
+         COUNT(*)
+            FROM `st-project-18-7-2022.SQL_demos.warehouse_orders.order_id` AS Orders) AS total_orders
+      CASE
+        WHEN COUNT(orders.order_id) / (SELECT COUNT(*) FROM warehouse_orders.order_id AS Orders) <= 0.20
+        THEN "fulfilled 0-20% of Orders"
+        WHEN COUNT(orders.order_id) / (SELECT COUNT(*) FROM warehouse_orders.order_id AS Orders) > 0.20
+            AND COUNT(orders.order_id) / (SELECT COUNT(*) FROM warehouse_orders.order_id AS Orders) <= 0.60
+        THEN "fulfilled 21-60% of Orders"
+      ELSE "Fulfilled more than 60% of Orders"
+      END AS fulfillment_summary
+    FROM `SQL_demos.warehouse_orders` AS Warehouse
+    LEFT JOIN `SQL_demos.orders` AS Orders
+      ON orders.warehouse_id = warehouse_orders.warehouse_id
+    GROUP BY
+      warehouse_orders.warehouse_id
+      warehouse_orders.warehouse_name
+    HAVING
+      COUNT(orders.order_id) > 0
+    

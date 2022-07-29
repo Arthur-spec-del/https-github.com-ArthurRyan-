@@ -1,23 +1,20 @@
-CREATE TABLE SQL_LEFT_v_INNER_JOIN_28_7_2022 (
-    `SELECT` VARCHAR(79) CHARACTER SET utf8,
-    `Column_2` INT
-);
-INSERT INTO SQL_LEFT_v_INNER_JOIN_28_7_2022 VALUES
-    (' seasons.market AS university',NULL),
-    (' seasons.name AS team_name',NULL),
-    (' seasons.wins',NULL),
-    (' seasons.losses',NULL),
-    (' seasons.ties',NULL),
-    (' mascots.mascot AS team_mascot',NULL),
-    ('FROM',NULL),
-    (' `bigquery-public-data.ncaa_basketball.mbb_historical_teams_seasons` AS seasons',NULL),
-    ('LEFT JOIN',NULL),
-    (' `bigquery-public-data.ncaa_basketball.mascots` AS mascots',NULL),
-    ('ON',NULL),
-    (' seasons.team_id = mascots.id',NULL),
-    ('WHERE',NULL),
-    (' seasons.season = 1984',NULL),
-    (' AND seasons.division = 1',NULL),
-    ('ORDER BY',NULL),
-    (' seasons.market',NULL),
-    (NULL,NULL);
+
+SELECT
+  seasons.market AS university
+  seasons.name AS team_name
+  seasons.wins
+  seasons.losses
+  seasons.ties
+  mascots.mascot AS team_mascot
+FROM
+`bigquery-public-data.ncaa_basketball.mbb_historical_teams_seasons` AS seasons
+LEFT JOIN
+`bigquery-public-data.ncaa_basketball.mascots` AS mascots
+ ON
+seasons.team_id = mascots.id
+WHERE
+seasons.season = 1984
+AND seasons.division = 1
+ORDER BY
+seasons.market
+
